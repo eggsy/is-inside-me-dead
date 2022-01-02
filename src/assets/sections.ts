@@ -27,10 +27,14 @@ export default [
         label: "Image 3",
         url: "https://i.imgur.com/6qR3UVh.jpg",
       },
+      {
+        label: "Proof",
+        url: "https://i.imgur.com/o8F3w9n.jpg",
+      },
     ],
   },
   {
-    title: "What we've lost?",
+    title: "What have we lost?",
     text: "We were serving 8860 users with 1,722,499 files that sized 671.5 GB in our S3 storage. We had more than 10 TiB of traffic in last 3 months. We got 52,857,942 requests and we paid more money than we should.",
     buttons: [
       {
