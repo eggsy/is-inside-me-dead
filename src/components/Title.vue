@@ -13,7 +13,7 @@ defineProps({
     :is="`h${size}`"
     :class="{
       'font-bold text-white': true,
-      'text-3xl': size === '1',
+      'text-4xl md:text-6xl': size === '1',
       'text-2xl': size === '2',
       'text-xl': size === '3',
     }"
