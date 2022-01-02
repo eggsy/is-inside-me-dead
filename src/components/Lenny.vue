@@ -18,6 +18,7 @@ const messages = [
   "dont leave me.",
   "i'll always be with u",
   "ur the best.",
+  "im never gona giv u up.",
   "im sorry.",
   "im dead.",
   "trust me.",
@@ -30,13 +31,31 @@ const messages = [
 
 // Tippy
 const currentMessage = ref(messages[Math.floor(Math.random() * messages.length)])
+const isMobile = ref(false)
 
-const { state, show, hide, setContent } = useTippy(target, {
+const { state, show, hide, setContent, setProps } = useTippy(target, {
   content: currentMessage.value,
   animation: 'shift-away-extreme',
+  placement: 'top',
+  hideOnClick: false,
+})
+
+const updateProps = () => setProps({
+  placement: isMobile.value ? 'bottom' : 'top',
+  offset: isMobile.value ? [0, 30] : [0, 0],
 })
 
 onMounted(() => {
+  // Change the placement of arrow on mobile
+  isMobile.value = window.innerWidth < 768
+  updateProps();
+
+  window.addEventListener("resize", () => {
+    isMobile.value = window.innerWidth < 768;
+    updateProps()
+  })
+
+  // Change message
   setTimeout(() => {
     show();
 
@@ -49,6 +68,14 @@ onMounted(() => {
     }, Math.floor(Math.random() * (3000 - 2000 + 1)) + 2000)
   }, 1500)
 })
+
+// rickroll funny meme
+const gotRickRolled = ref(false);
+
+const openRickRoll = () => {
+  window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+  gotRickRolled.value = true
+}
 </script>
 
 <template>
@@ -56,7 +83,8 @@ onMounted(() => {
     ref="target"
     v-motion-pop
     :delay="1000"
-    class="flex font-bold space-x-3 text-4xl items-center"
+    class="flex items-center space-x-3 text-6xl font-bold select-none text-white/75"
+    @click="openRickRoll()"
   >
     <div
       v-motion
@@ -103,7 +131,7 @@ onMounted(() => {
           repeatDelay: 1000,
         },
       }"
-    >‸</div>
+    >{{ gotRickRolled ? '.' : '‸' }}</div>
 
     <div
       v-motion
