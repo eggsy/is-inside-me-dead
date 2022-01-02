@@ -14,12 +14,12 @@ import FooterSocials from "./Socials.vue"
 <template>
   <FooterContainer>
     <FooterItem>
-      <Title>Thank you!</Title>
+      <Title size="2">Thank you!</Title>
       <Text>Really. For everyhing. We love you. We respect you. Hope to see you in the future.</Text>
     </FooterItem>
 
     <FooterItem>
-      <Title>Follow us on Twitter</Title>
+      <Title size="2">Follow us on Twitter</Title>
 
       <FooterSocials />
     </FooterItem>
