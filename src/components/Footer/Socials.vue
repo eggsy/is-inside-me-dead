@@ -12,7 +12,7 @@ const accounts = [{
   image: "https://i.imgur.com/rZrHHNF.jpg"
 },
 {
-  name: "@Tresmosss",
+  name: "@Tresmos",
   url: "https://twitter.com/Tresmos",
   image: "https://i.imgur.com/ET2hyeS.jpg"
 },]
