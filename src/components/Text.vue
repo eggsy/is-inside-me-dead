@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+import { useSlots } from "vue"
+
+const slots = useSlots()
+
 defineProps({
   size: {
     type: String,

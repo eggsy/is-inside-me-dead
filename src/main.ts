@@ -1,7 +1,11 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 
-// Tailwind CSS
+// Plugins
+import { MotionPlugin as VueMotion } from "@vueuse/motion";
+
+// CSS
 import "./assets/tailwind.css";
 
-createApp(App).mount("#app");
+// Mount app
+createApp(App).use(VueMotion).mount("#app");

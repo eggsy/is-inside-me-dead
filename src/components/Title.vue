@@ -12,7 +12,7 @@ defineProps({
   <Component
     :is="`h${size}`"
     :class="{
-      'font-bold': true,
+      'font-bold text-white': true,
       'text-3xl': size === '1',
       'text-2xl': size === '2',
       'text-xl': size === '3',

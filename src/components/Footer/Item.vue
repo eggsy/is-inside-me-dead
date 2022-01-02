@@ -1,5 +1,5 @@
 <template>
-  <div class="flex md:contents">
+  <div class="space-y-4">
     <slot />
   </div>
 </template>
