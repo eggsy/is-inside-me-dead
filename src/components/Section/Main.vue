@@ -1,10 +1,13 @@
 <script lang="ts" setup>
+// Layout
 import Section from "./Item.vue"
 
+// Elements
 import Title from "../Title.vue"
 import Text from "../Text.vue"
 import Button from "../Button.vue"
 
+// Data
 import sections from '../../assets/sections';
 </script>
 
@@ -13,7 +16,7 @@ import sections from '../../assets/sections';
     <Title size="2">{{ item.title }}</Title>
     <Text>{{ item.text }}</Text>
 
-    <div v-if="item.buttons" class="flex space-x-3 w-full items-center overflow-x-auto">
+    <div v-if="item.buttons" class="flex items-center w-full space-x-3 overflow-x-auto">
       <Button
         v-for="(button, idx) in item.buttons"
         :key="`btn-${idx}`"
