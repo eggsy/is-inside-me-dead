@@ -42,7 +42,7 @@ const { state, show, hide, setContent, setProps } = useTippy(target, {
 
 const updateProps = () => setProps({
   placement: isMobile.value ? 'bottom' : 'top',
-  offset: isMobile.value ? [0, 30] : [0, 0],
+  offset: isMobile.value ? [0, 30] : [0, 10],
 })
 
 onMounted(() => {
@@ -69,13 +69,25 @@ onMounted(() => {
   }, 1500)
 })
 
-// rickroll funny meme
+// Rick Roll
 const gotRickRolled = ref(false);
 
 const openRickRoll = () => {
   window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
   gotRickRolled.value = true
 }
+
+// Random face
+const faces = [
+  'Ծ_Ծ',
+  '◉︵◉',
+  'ᗒᗣᗕ',
+  '♥︵♥',
+  'v︵v',
+  '.︵.'
+].map(item => item.split(''))
+
+const randomFace = faces[Math.floor(Math.random() * faces.length)]
 </script>
 
 <template>
@@ -83,17 +95,15 @@ const openRickRoll = () => {
     ref="target"
     v-motion-pop
     :delay="1000"
-    class="flex items-center space-x-3 text-6xl font-bold select-none text-white/75"
+    class="flex items-center space-x-4 text-6xl font-bold select-none text-white/75"
     @click="openRickRoll()"
   >
     <div
       v-motion
       :initial="{
-        translateX: 0,
-        translateY: 0,
+        translateY: 0
       }"
       :enter="{
-        translateX: 20,
         translateY: 10,
         transition: {
           repeat: Infinity,
@@ -101,71 +111,70 @@ const openRickRoll = () => {
           repeatDelay: 1000,
         },
       }"
-    >っ</div>
+    >(</div>
+
+    <div class="flex items-center space-x-2">
+      <div
+        v-motion
+        :initial="{
+          rotate: -5,
+        }"
+        :enter="{
+          rotate: -15,
+          transition: {
+            repeat: Infinity,
+            repeatType: 'mirror',
+            repeatDelay: 1000,
+          },
+        }"
+      >{{ randomFace[0] }}</div>
+
+      <div
+        v-motion
+        :initial="{
+          translateY: 20,
+          scale: 1,
+        }"
+        :enter="{
+          scale: 1.1,
+          transition: {
+            repeat: Infinity,
+            repeatType: 'mirror',
+            repeatDelay: 1000,
+          },
+        }"
+      >{{ gotRickRolled ? '.' : randomFace[1] }}</div>
+
+      <div
+        v-motion
+        :initial="{
+          rotate: 7,
+        }"
+        :enter="{
+          rotate: 15,
+          transition: {
+            repeat: Infinity,
+            repeatType: 'mirror',
+            repeatDelay: 1000,
+          },
+        }"
+        :delay="100"
+      >{{ randomFace[2] }}</div>
+    </div>
 
     <div
       v-motion
       :initial="{
-        rotate: '0deg',
+        translateY: 10
       }"
       :enter="{
-        rotate: '-25deg',
+        translateY: -10,
         transition: {
           repeat: Infinity,
           repeatType: 'mirror',
           repeatDelay: 1000,
         },
       }"
-    >–</div>
-
-    <div
-      v-motion
-      :initial="{
-        scale: 1,
-      }"
-      :enter="{
-        scale: 1.1,
-        transition: {
-          repeat: Infinity,
-          repeatType: 'mirror',
-          repeatDelay: 1000,
-        },
-      }"
-    >{{ gotRickRolled ? '.' : '‸' }}</div>
-
-    <div
-      v-motion
-      :initial="{
-        rotate: '0deg',
-      }"
-      :enter="{
-        rotate: '25deg',
-        transition: {
-          repeat: Infinity,
-          repeatType: 'mirror',
-          repeatDelay: 1000,
-        },
-      }"
-      :delay="100"
-    >–</div>
-
-    <div
-      v-motion
-      :initial="{
-        translateX: 0,
-        translateY: 0,
-        scaleX: -1,
-      }"
-      :enter="{
-        translateX: -20,
-        translateY: 10,
-        transition: {
-          repeat: Infinity,
-          repeatType: 'mirror',
-          repeatDelay: 1000,
-        },
-      }"
-      :delay="100"
-    >っ</div>
+    >)</div>
   </div>
 </template>
