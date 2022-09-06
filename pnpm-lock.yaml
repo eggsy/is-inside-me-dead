@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@tailwindcss/line-clamp': ^0.4.2
   '@vitejs/plugin-vue': ^3.1.0
-  '@vueuse/motion': ^2.0.0-beta.18
+  '@vueuse/motion': 2.0.0-beta.12
   autoprefixer: ^10.4.8
   defu: ^6.1.0
   postcss: ^8.4.16
@@ -18,7 +18,7 @@ specifiers:
 
 dependencies:
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.1.8
-  '@vueuse/motion': 2.0.0-beta.18_vue@3.2.38
+  '@vueuse/motion': 2.0.0-beta.12_vue@3.2.38
   sass: 1.54.8
   vue: 3.2.38
   vue-tippy: 6.0.0-alpha.63_vue@3.2.38
@@ -245,10 +245,9 @@ packages:
     resolution: {integrity: sha512-IwSfzH80bnJMzqhaapqJl9JRIiyQU0zsRGEgnxN6jhq7992cPUJIRfV+JHRIZXjYqbwt07E1gTEp0R0zPJ1aqw==}
     dev: false
 
-  /@vueuse/motion/2.0.0-beta.18_vue@3.2.38:
-    resolution: {integrity: sha512-mPeXxuqZp13lqpcb+345TnEP7tEOjC/wTkwf8be1Obzt3913lPpZPXgwKafMoocKRNOnMZye8Y6PqQOEKztk9A==}
+  /@vueuse/motion/2.0.0-beta.12_vue@3.2.38:
+    resolution: {integrity: sha512-cAZqXexLX6xo+H1N1Mv+wBSSqG4wB+BdjIuHQ50jwlelXCDxSi8gj0K/9nDS+aUZtWh6YMwS6UGCKg58jMVglA==}
     peerDependencies:
-      '@nuxt/kit': npm:@nuxt/kit-edge@latest
       '@vue/composition-api': ^1.4.1
       vue: ^2.0.0 || >=3.0.0-rc.0
     peerDependenciesMeta:
@@ -257,7 +256,6 @@ packages:
     dependencies:
       '@vueuse/core': 8.9.4_vue@3.2.38
       '@vueuse/shared': 8.9.4_vue@3.2.38
-      csstype: 3.1.0
       framesync: 6.1.2
       popmotion: 11.0.5
       style-value-types: 5.1.2
@@ -375,10 +373,6 @@ packages:
 
   /csstype/2.6.20:
     resolution: {integrity: sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA==}
-
-  /csstype/3.1.0:
-    resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
-    dev: false
 
   /defined/1.0.0:
     resolution: {integrity: sha512-Y2caI5+ZwS5c3RiNDJ6u53VhQHv+hHKwhkI1iHvceKUHw9Df6EK2zRLfjejRgMuCuxK7PfSWIMwWecceVvThjQ==}
