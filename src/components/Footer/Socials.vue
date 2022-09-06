@@ -1,21 +1,23 @@
 <script lang="ts" setup>
 // Layout
-import FlexContainer from "../Container/Flex.vue"
+import FlexContainer from "../Container/Flex.vue";
 
 // Elements
-import FooterImage from "./Image.vue"
+import FooterImage from "./Image.vue";
 
 // Data
-const accounts = [{
-  name: "@eggsydev",
-  url: "https://twitter.com/eggsydev",
-  image: "https://i.imgur.com/rZrHHNF.jpg"
-},
-{
-  name: "@Tresmos",
-  url: "https://twitter.com/Tresmos",
-  image: "https://i.imgur.com/ET2hyeS.jpg"
-},]
+const accounts = [
+  {
+    name: "@eggsydev",
+    url: "https://twitter.com/eggsydev",
+    image: "https://github.com/eggsy.png",
+  },
+  {
+    name: "@Tresmos",
+    url: "https://twitter.com/Tresmos",
+    image: "https://github.com/tresmos.png",
+  },
+];
 </script>
 
 <template>
