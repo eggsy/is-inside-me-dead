@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <div
-    class="space-y-16 text-gray-100 bg-neutral-800"
+    class="space-y-16 text-gray-100"
     :class="{
       'md:w-1/2': half === true,
       'py-16': padding === true,
