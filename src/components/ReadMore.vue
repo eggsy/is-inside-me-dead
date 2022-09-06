@@ -1,12 +1,11 @@
 <script lang="ts" setup>
-import Text from "./Text.vue"
+import Text from "./Text.vue";
 
 const goToDetails = () => {
-  window.scrollTo({
-    top: document.getElementById("details")?.offsetTop,
-    behavior: "smooth"
+  document.getElementById("details")?.scrollIntoView({
+    behavior: "smooth",
   });
-}
+};
 </script>
 
 <template>
@@ -15,5 +14,6 @@ const goToDetails = () => {
     class="cursor-pointer inset-x-0 bottom-10 absolute !ml-0 md:inset-x-auto hover:underline"
     :delay="1500"
     @click.native="goToDetails"
-  >Read more...</Text>
+    >Read more...</Text
+  >
 </template>
