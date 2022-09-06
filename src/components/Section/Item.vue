@@ -2,7 +2,7 @@
 import { useMotion } from "@vueuse/motion";
 import { ref } from "vue";
 
-const target = ref<HTMLElement>();
+const target = ref<HTMLElement | null>(null);
 
 useMotion(target, {
   initial: {
