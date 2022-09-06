@@ -1,20 +1,11 @@
 <script lang="ts" setup>
-import { useSlots } from "vue"
-
-const slots = useSlots()
-
-defineProps({
-  size: {
-    type: String,
-    required: false,
-    default: "1"
-  },
-  small: {
-    type: Boolean,
-    required: false,
-    default: false
-  }
-})
+withDefaults(
+  defineProps<{
+    size?: string;
+    small?: boolean;
+  }>(),
+  { size: "1" }
+);
 </script>
 
 <template>
@@ -22,7 +13,7 @@ defineProps({
     :is="small ? 'small' : 'p'"
     class="text-neutral-500"
     :class="{
-      'text-xs': small === true
+      'text-xs': small === true,
     }"
   >
     <slot />
